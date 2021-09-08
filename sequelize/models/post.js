@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER,
     restaurant_id: DataTypes.STRING,
     title: DataTypes.STRING,
-    content: DataTypes.STRING,
+    content: DataTypes.TEXT,
     views: DataTypes.INTEGER,
     is_deleted: DataTypes.BOOLEAN
   }, {
