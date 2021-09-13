@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Post.belongsTo(models.User, {foreignKey:"user_id"})
+      Post.hasMany(model.Picture, { foreignKey:"id"})
     }
   };
   Post.init({
@@ -19,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
     views: DataTypes.INTEGER,
+    visited_time: DataTypes.DATE,
+    is_published: DataTypes.BOOLEAN,
     is_deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

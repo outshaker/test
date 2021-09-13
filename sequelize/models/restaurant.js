@@ -3,22 +3,22 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Picture extends Model {
+  class Restaurant extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Picture.belongsTo(models.Post, {foreignKey:"post_id"})
+      // define association here
     }
   };
-  Picture.init({
-    restaurant_id: DataTypes.INTEGER,
-    food_picture_url: DataTypes.STRING
+  Restaurant.init({
+    restaurant_name: DataTypes.STRING,
+    place_id: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Picture',
+    modelName: 'Restaurant',
   });
-  return Picture;
+  return Restaurant;
 };

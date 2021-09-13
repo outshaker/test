@@ -1,21 +1,36 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Pictures', {
+    await queryInterface.createTable('Posts', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      post_id: {
+      user_id: {
         type: Sequelize.INTEGER
       },
       restaurant_id: {
+        type: Sequelize.STRING
+      },
+      title: {
+        type: Sequelize.STRING
+      },
+      content: {
+        type: Sequelize.TEXT
+      },
+      views: {
         type: Sequelize.INTEGER
       },
-      food_picture_url: {
-        type: Sequelize.STRING
+      visited_time: {
+        type: Sequelize.DATE
+      },
+      is_published: {
+        type: Sequelize.BOOLEAN
+      },
+      is_deleted: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +43,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Pictures');
+    await queryInterface.dropTable('Posts');
   }
 };
