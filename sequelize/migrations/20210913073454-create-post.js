@@ -15,6 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       content: {
@@ -25,11 +26,14 @@ module.exports = {
       },
       visited_time: {
         type: Sequelize.DATE
+        allowNull: false,
       },
       is_published: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       is_deleted: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       createdAt: {

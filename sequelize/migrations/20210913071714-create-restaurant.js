@@ -9,9 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       restaurant_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       place_id: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

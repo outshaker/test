@@ -13,6 +13,7 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Users', [{
       nickname: 'John',
+      username: 'John',
       password: 'John',
       email: 'example@example.com',
       user_level: '1',
@@ -23,6 +24,7 @@ module.exports = {
     },
     {
       nickname: 'yo',
+      username: 'yo',
       password: 'yo',
       email: 'yo@example.com',
       user_level: '1',
